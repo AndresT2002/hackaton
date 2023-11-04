@@ -12,5 +12,5 @@ public interface IUserDisciplineService {
 
     public void deleteUserDiscipline(Long id);
 
-    public UserDiscipline updateUserDiscipline(Long id);
+    public UserDiscipline updateUserDiscipline(UserDiscipline userDiscipline);
 }

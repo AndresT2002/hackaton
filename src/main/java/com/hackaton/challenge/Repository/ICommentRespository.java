@@ -7,4 +7,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ICommentRespository extends JpaRepository<Comment,Long> {
+
+
 }

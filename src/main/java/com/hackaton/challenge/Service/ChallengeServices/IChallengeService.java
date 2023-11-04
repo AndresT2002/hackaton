@@ -12,5 +12,5 @@ public interface IChallengeService {
 
     public void deleteChallenge(Long id);
 
-    public Challenge updateChallenge(Long id);
+    public Challenge updateChallenge(Challenge challenge);
 }

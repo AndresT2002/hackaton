@@ -12,6 +12,6 @@ public interface ICommentService {
 
     public void deleteComment(Long id);
 
-    public Comment updateComment(Long id);
+    public Comment updateComment(Comment comment);
 
 }

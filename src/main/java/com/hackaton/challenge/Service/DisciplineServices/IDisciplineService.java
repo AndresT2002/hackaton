@@ -12,5 +12,5 @@ public interface IDisciplineService {
 
     public void deleteDiscipline(Long id);
 
-    public Discipline updateDiscipline(Long id);
+    public Discipline updateDiscipline(Discipline discipline);
 }

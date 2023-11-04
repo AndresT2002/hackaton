@@ -11,6 +11,6 @@ public interface IRelationshipService {
 
     public void deleteRelationship(Long id);
 
-    public Relationship updateRelationship(Long id);
+    public Relationship updateRelationship(Relationship relationship);
 
 }

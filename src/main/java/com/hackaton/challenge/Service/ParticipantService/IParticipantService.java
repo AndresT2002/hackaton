@@ -13,5 +13,5 @@ public interface IParticipantService {
 
     public void deleteParticipant(Long id);
 
-    public Participant updateParticipant(Long id);
+    public Participant updateParticipant(Participant participant);
 }
