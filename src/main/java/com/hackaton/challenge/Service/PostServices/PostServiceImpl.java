@@ -66,4 +66,9 @@ public class PostServiceImpl implements IPostService{
     public List<Comment> getCommentsByPost(Long id) {
         return null;
     }
+
+    @Override
+    public List<Post> getPostByUserId(Long id) {
+        return postRespository.findPostsByUser(id);
+    }
 }

@@ -14,4 +14,8 @@ public interface IPostRespository extends JpaRepository<Post,Long> {
 
     @Override
     Optional<Post> findById(Long id);
+
+    @Query("SELECT u FROM Post u WHERE u.createdBy = ?1")
+    List<Post> findPostsByUser(Long createdBy);
+
 }

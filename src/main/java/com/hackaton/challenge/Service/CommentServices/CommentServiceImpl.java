@@ -47,4 +47,9 @@ public class CommentServiceImpl implements ICommentService{
         }
         return commentRespository.save(comment);
     }
+
+    @Override
+    public List<Comment> getCommentsByPostId(Long id) {
+        return commentRespository.findCommentsByPostId(id);
+    }
 }

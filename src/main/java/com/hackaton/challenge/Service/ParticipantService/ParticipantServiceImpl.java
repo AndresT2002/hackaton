@@ -47,4 +47,17 @@ public class ParticipantServiceImpl implements  IParticipantService{
         }
         return participantRespository.save(participant);
     }
+
+    @Override
+    public void deleteByIdChallenge(Long id, Long challenge) {
+
+        Optional<Participant> participantResult=participantRespository.getParticipantByUserIdChallenge(id,challenge);
+
+        if(participantResult.isPresent()) {
+            Participant participantObtained= participantResult.get();
+            participantRespository.delete(participantObtained);
+        }
+
+
+    }
 }

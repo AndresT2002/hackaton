@@ -21,5 +21,10 @@ public class ChallengeController {
         return new ResponseEntity<>(challengeCreated, HttpStatus.CREATED);
     }
 
+    @GetMapping()
+    public ResponseEntity<?> getChallenges(){
+        return new ResponseEntity<>(challengeService.getChallenges(), HttpStatus.OK);
+    }
+
 
 }

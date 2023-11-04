@@ -40,8 +40,10 @@ public class PostController {
         return new ResponseEntity<>(postService.getPosts(), HttpStatus.OK);
     }
 
-    @GetMapping("/{id}/comments")
-    public ResponseEntity<?> getCommentsByPost(@PathVariable Long id){
-        return new ResponseEntity<>(postService.getCommentsByPost(id), HttpStatus.OK);
+
+
+    @GetMapping("/{userId}")
+    public ResponseEntity<?> getPostsByUserId(@PathVariable Long userId){
+        return new ResponseEntity<>(postService.getPostByUserId(userId), HttpStatus.OK);
     }
 }

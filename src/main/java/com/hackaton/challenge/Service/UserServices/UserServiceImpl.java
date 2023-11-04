@@ -52,4 +52,17 @@ public class UserServiceImpl implements  IUserServices{
 
 
     }
+
+    @Override
+    public User getUserByEmail(String email) {
+
+        Optional<User> userRepositoryByEmail=userRepository.findByEmail(email);
+
+        if(!userRepositoryByEmail.isPresent()) {
+            return null;
+        }
+        return userRepositoryByEmail.get();
+
+
+    }
 }

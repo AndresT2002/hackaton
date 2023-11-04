@@ -14,4 +14,6 @@ public interface IParticipantService {
     public void deleteParticipant(Long id);
 
     public Participant updateParticipant(Participant participant);
+
+    public void deleteByIdChallenge(Long id, Long challenge);
 }

@@ -31,9 +31,6 @@ public class Challenge {
     @Column(name="status")
     private EStatus status;
 
-    @Column(name="participants_id")
-    private Long participants;
-
     @Column(name="id_discipline")
     private Long discipline;
 

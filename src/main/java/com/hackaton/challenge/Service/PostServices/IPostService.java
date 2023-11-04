@@ -16,4 +16,7 @@ public interface IPostService {
     public Post getPostById(Long id);
 
     public List<Comment>  getCommentsByPost(Long id);
+
+    public List<Post> getPostByUserId(Long id);
+
 }

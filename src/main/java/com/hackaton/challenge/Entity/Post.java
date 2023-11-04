@@ -25,7 +25,7 @@ public class Post {
     private Long id;
 
     @Column(name="created_by")
-    private Long created_by;
+    private Long createdBy;
 
     @Column(name="title")
     private String title;
@@ -38,7 +38,7 @@ public class Post {
     private byte[] multi;
 
     @Column(name="creation_date")
-    private Date creation_date;
+    private Date creationDate;
 
 
 

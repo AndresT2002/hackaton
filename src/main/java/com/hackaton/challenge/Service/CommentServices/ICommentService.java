@@ -14,4 +14,6 @@ public interface ICommentService {
 
     public Comment updateComment(Comment comment);
 
+    public List<Comment> getCommentsByPostId(Long id);
+
 }
