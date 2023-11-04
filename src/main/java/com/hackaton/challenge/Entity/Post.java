@@ -34,8 +34,8 @@ public class Post {
     private String description;
 
 
-    @Lob
-    private byte[] multi;
+    @Column(name="multi")
+    private String multi;
 
     @Column(name="creation_date")
     private Date creationDate;
