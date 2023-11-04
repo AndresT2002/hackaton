@@ -52,4 +52,17 @@ public class UserServiceImpl implements  IUserServices{
 
 
     }
+
+
+    @Override
+    public User login(String email, String password) {
+        return userRepository.findByEmailAndPassword(email,password);
+    }
+
+    @Override
+    public User findByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
+
+
 }

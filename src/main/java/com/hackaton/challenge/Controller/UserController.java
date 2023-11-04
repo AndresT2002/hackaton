@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 
 @RestController
 @RequestMapping("/user")
@@ -19,6 +21,12 @@ public class UserController {
     @PostMapping()
 
     public ResponseEntity<User> createUser(@RequestBody User user){
+
+        Optional<User> userObtained= Optional.ofNullable(userServices.findByEmail(user.getEmail()));
+        if (userObtained.isPresent()){
+            return new ResponseEntity<>(HttpStatus.CONFLICT);
+        }
+
 
         User userCreated=userServices.createUser(user);
 
@@ -43,6 +51,14 @@ public class UserController {
         return new ResponseEntity<>(userServices.getUsers(), HttpStatus.OK);
     }
 
+
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody User user){
+
+        User userObtained = userServices.login(user.getEmail(), user.getPassword());
+
+        return new ResponseEntity<>(userObtained, HttpStatus.OK);
+    }
 
 
 }
