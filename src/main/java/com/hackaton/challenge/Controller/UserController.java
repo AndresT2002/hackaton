@@ -13,6 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/user")
+@CrossOrigin("*")
 public class UserController {
 
     @Autowired
@@ -62,7 +63,6 @@ public class UserController {
 
     @GetMapping("/{email}")
     public ResponseEntity<?> getUserByEmail(@PathVariable String email){
-
         return new ResponseEntity<>(userServices.findByEmail(email), HttpStatus.OK);
     }
 
