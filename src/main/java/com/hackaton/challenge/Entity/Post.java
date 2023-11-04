@@ -41,7 +41,8 @@ public class Post {
     private Date creationDate;
 
 
-
+    @Column(name="is_video")
+    private Boolean isVideo;
 
 
 
