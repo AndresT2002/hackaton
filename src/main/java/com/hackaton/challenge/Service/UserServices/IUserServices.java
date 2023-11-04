@@ -16,5 +16,9 @@ public interface IUserServices {
     public User createUser(User user);
 
     public User getUserByEmail(String email);
+    public User login(String email, String password);
+
+    public User findByEmail(String email);
+
 
 }
