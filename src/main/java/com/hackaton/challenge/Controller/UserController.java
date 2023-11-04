@@ -1,7 +1,7 @@
 package com.hackaton.challenge.Controller;
 
 import com.hackaton.challenge.Entity.User;
-import com.hackaton.challenge.Service.IUserServices;
+import com.hackaton.challenge.Service.UserServices.IUserServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

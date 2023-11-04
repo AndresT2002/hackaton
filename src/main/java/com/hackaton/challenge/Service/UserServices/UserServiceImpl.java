@@ -1,4 +1,4 @@
-package com.hackaton.challenge.Service;
+package com.hackaton.challenge.Service.UserServices;
 
 
 import com.hackaton.challenge.Entity.User;
