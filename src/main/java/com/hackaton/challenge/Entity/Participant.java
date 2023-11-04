@@ -1,5 +1,6 @@
 package com.hackaton.challenge.Entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
@@ -18,18 +19,14 @@ public class Participant {
     private Long id;
 
 
-    @ManyToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name="id_user")
-    @JsonIgnore
-    private User user;
-
-    @Column(name="participant")
-    @ManyToMany(fetch = FetchType.EAGER, targetEntity = Challenge.class, cascade = CascadeType.PERSIST)
-    @JsonIgnore
-    private List<Challenge> challenges;
+    @Column(name="user_id")
+    private Long user;
 
     @Column(name="position")
-    private long position;
+    private Long position;
+
+    @Column(name="challenge_id")
+    private Long challenge_id;
 
 
 

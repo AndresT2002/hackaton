@@ -28,12 +28,6 @@ public class Discipline {
     @Column(name="description")
     private String description;
 
-    @OneToMany(mappedBy = "discipline",cascade = CascadeType.ALL,fetch = FetchType.LAZY,orphanRemoval = true)
-    private List<Challenge> challenge;
-
-
-    @OneToMany(mappedBy = "discipline",cascade = CascadeType.ALL,fetch = FetchType.LAZY,orphanRemoval = true)
-    private List<UserDiscipline> disciplines;
 
 
 

@@ -23,7 +23,6 @@ public class User {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
 
-
     @Column(name="name")
     private String name;
 
@@ -36,24 +35,6 @@ public class User {
     @Column(name="birth_date")
     private Date birthDate;
 
-    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY,orphanRemoval = true)
-    @JsonIgnore
-    private List<Comment> comments;
 
-    @ManyToOne()
-    @JoinColumn(name="participants")
-    private Participant participant;
-
-    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY,orphanRemoval = true)
-    @JsonIgnore
-    private List<Post> posts;
-
-    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY,orphanRemoval = true)
-    @JsonIgnore
-    private List<UserDiscipline> disciplines;
-
-    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY,orphanRemoval = true)
-    @JsonIgnore
-    private List<Participant> participants;
 
 }

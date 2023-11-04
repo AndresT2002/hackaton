@@ -21,12 +21,11 @@ public class Relationship {
     private Long id;
 
 
+    @Column(name="id_user")
+    private Long id_user;
 
-    @Column(name="name")
-    private String name;
 
-
-    @Column(name="description")
-    private String description;
+    @Column(name="id_followers")
+    private Long id_followers;
 
 }

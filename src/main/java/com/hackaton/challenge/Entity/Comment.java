@@ -1,6 +1,8 @@
 package com.hackaton.challenge.Entity;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,19 +24,14 @@ public class Comment {
     private Long id;
 
 
-    @Column(name="name")
-    private String name;
+    @Column(name="commentary")
+    private String commentary;
 
-    @ManyToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name="id_user")
-    private User user;
+    @Column(name="created_by")
+    private long created_by;
 
-
-    @ManyToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name="id_post")
-    private Post post;
-
-
+    @Column(name="post_id")
+    private long post_id;
 
 
 }

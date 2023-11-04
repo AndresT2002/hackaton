@@ -22,7 +22,6 @@ public class Challenge {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
 
-
     @Column(name="name")
     private String name;
 
@@ -32,16 +31,11 @@ public class Challenge {
     @Column(name="status")
     private EStatus status;
 
-    @Column(name="participant")
-    @ManyToMany(fetch = FetchType.EAGER, targetEntity = Participant.class, cascade = CascadeType.PERSIST)
-    @JsonIgnore
-    private List<Participant> participants;
+    @Column(name="participants_id")
+    private Long participants;
 
-
-
-    @ManyToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name="id_discipline")
-    private Discipline discipline;
+    @Column(name="id_discipline")
+    private Long discipline;
 
 
 

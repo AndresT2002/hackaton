@@ -20,13 +20,12 @@ public class UserDiscipline {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne()
-    @JoinColumn(name="user")
-    private User user;
 
-    @ManyToOne()
-    @JoinColumn(name="discipline")
-    private Discipline discipline;
+    @Column(name="id_user")
+    private Long id_user;
+
+    @Column(name="id_discipline")
+    private Long id_discipline;
 
 
 

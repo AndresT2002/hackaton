@@ -1,7 +1,9 @@
 package com.hackaton.challenge.Entity;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,24 +24,22 @@ public class Post {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne()
-    @JoinColumn(name="posts")
-    @JsonIgnore
-    private User user;
+    @Column(name="created_by")
+    private Long created_by;
 
+    @Column(name="title")
     private String title;
 
+    @Column(name="description")
     private String description;
 
 
     @Lob
     private byte[] multi;
 
-    private Date creationDate;
+    @Column(name="creation_date")
+    private Date creation_date;
 
-
-    @OneToMany(mappedBy = "post",cascade = CascadeType.ALL,fetch = FetchType.LAZY,orphanRemoval = true)
-    private List<Comment> comment;
 
 
 

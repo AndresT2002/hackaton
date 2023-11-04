@@ -10,8 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface IPostRespository extends JpaRepository<Post,Long> {
-    @Query("SELECT t FROM Comment t WHERE t.post.id = ?1")
-    List<Comment> findAllCommentsByPostId(Long id);
+
 
     @Override
     Optional<Post> findById(Long id);
